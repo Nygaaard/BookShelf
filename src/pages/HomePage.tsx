@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Book } from "../types/BookInterface";
+import BookCard from "../components/BookCard";
 
 const HomePage = () => {
   const [popularBooks, setPopularBooks] = useState<Book[]>([]);
@@ -45,19 +46,11 @@ const HomePage = () => {
       <button onClick={handleSearch}>Sök</button>
 
       <h2>Populära böcker</h2>
-      <ul>
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
         {popularBooks.map((book) => (
-          <li key={book.id}>
-            <h3>{book.volumeInfo.title}</h3>
-            {book.volumeInfo.imageLinks?.thumbnail && (
-              <img
-                src={book.volumeInfo.imageLinks.thumbnail}
-                alt={book.volumeInfo.title}
-              />
-            )}
-          </li>
+          <BookCard key={book.id} book={book} />
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

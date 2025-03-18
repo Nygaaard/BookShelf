@@ -1,0 +1,182 @@
+[
+  {
+    "id": "1",
+    "volumeInfo": {
+      "title": "The Great Gatsby",
+      "authors": ["F. Scott Fitzgerald"],
+      "imageLinks": {
+        "thumbnail": "https://example.com/gatsby.jpg"
+      },
+      "description": "A novel set in the 1920s.",
+      "publishedDate": "1925"
+    }
+  },
+  {
+    "id": "2",
+    "volumeInfo": {
+      "title": "1984",
+      "authors": ["George Orwell"],
+      "imageLinks": {
+        "thumbnail": "https://example.com/1984.jpg"
+      },
+      "description": "Dystopian novel about surveillance.",
+      "publishedDate": "1949"
+    }
+  },
+  {
+    "id": "3",
+    "volumeInfo": {
+      "title": "To Kill a Mockingbird",
+      "authors": ["Harper Lee"],
+      "imageLinks": {
+        "thumbnail": "https://example.com/mockingbird.jpg"
+      },
+      "description": "A story of racial injustice in the Deep South.",
+      "publishedDate": "1960"
+    }
+  },
+  {
+    "id": "4",
+    "volumeInfo": {
+      "title": "Moby-Dick",
+      "authors": ["Herman Melville"],
+      "imageLinks": {
+        "thumbnail": "https://example.com/mobydick.jpg"
+      },
+      "description": "The quest for the elusive white whale.",
+      "publishedDate": "1851"
+    }
+  },
+  {
+    "id": "5",
+    "volumeInfo": {
+      "title": "Pride and Prejudice",
+      "authors": ["Jane Austen"],
+      "imageLinks": {
+        "thumbnail": "https://example.com/pride.jpg"
+      },
+      "description": "A classic romance novel.",
+      "publishedDate": "1813"
+    }
+  },
+  {
+    "id": "6",
+    "volumeInfo": {
+      "title": "Brave New World",
+      "authors": ["Aldous Huxley"],
+      "imageLinks": {
+        "thumbnail": "https://example.com/bravenewworld.jpg"
+      },
+      "description": "A dystopian vision of the future.",
+      "publishedDate": "1932"
+    }
+  },
+  {
+    "id": "7",
+    "volumeInfo": {
+      "title": "The Catcher in the Rye",
+      "authors": ["J.D. Salinger"],
+      "imageLinks": {
+        "thumbnail": "https://example.com/catcher.jpg"
+      },
+      "description": "A teenager's journey through New York.",
+      "publishedDate": "1951"
+    }
+  },
+  {
+    "id": "8",
+    "volumeInfo": {
+      "title": "War and Peace",
+      "authors": ["Leo Tolstoy"],
+      "imageLinks": {
+        "thumbnail": "https://example.com/warandpeace.jpg"
+      },
+      "description": "An epic historical novel.",
+      "publishedDate": "1869"
+    }
+  },
+  {
+    "id": "9",
+    "volumeInfo": {
+      "title": "The Hobbit",
+      "authors": ["J.R.R. Tolkien"],
+      "imageLinks": {
+        "thumbnail": "https://example.com/hobbit.jpg"
+      },
+      "description": "A fantasy adventure.",
+      "publishedDate": "1937"
+    }
+  },
+  {
+    "id": "10",
+    "volumeInfo": {
+      "title": "Crime and Punishment",
+      "authors": ["Fyodor Dostoevsky"],
+      "imageLinks": {
+        "thumbnail": "https://example.com/crime.jpg"
+      },
+      "description": "A psychological exploration of guilt.",
+      "publishedDate": "1866"
+    }
+  },
+  {
+    "id": "11",
+    "volumeInfo": {
+      "title": "The Lord of the Rings",
+      "authors": ["J.R.R. Tolkien"],
+      "imageLinks": {
+        "thumbnail": "https://example.com/lotr.jpg"
+      },
+      "description": "An epic fantasy saga.",
+      "publishedDate": "1954"
+    }
+  },
+  {
+    "id": "12",
+    "volumeInfo": {
+      "title": "Frankenstein",
+      "authors": ["Mary Shelley"],
+      "imageLinks": {
+        "thumbnail": "https://example.com/frankenstein.jpg"
+      },
+      "description": "A tale of science gone wrong.",
+      "publishedDate": "1818"
+    }
+  },
+  {
+    "id": "13",
+    "volumeInfo": {
+      "title": "The Odyssey",
+      "authors": ["Homer"],
+      "imageLinks": {
+        "thumbnail": "https://example.com/odyssey.jpg"
+      },
+      "description": "An ancient Greek epic poem.",
+      "publishedDate": "8th century BC"
+    }
+  },
+  {
+    "id": "14",
+    "volumeInfo": {
+      "title": "The Divine Comedy",
+      "authors": ["Dante Alighieri"],
+      "imageLinks": {
+        "thumbnail": "https://example.com/divinecomedy.jpg"
+      },
+      "description": "A journey through Hell, Purgatory, and Paradise.",
+      "publishedDate": "1320"
+    }
+  },
+  {
+    "id": "15",
+    "volumeInfo": {
+      "title": "One Hundred Years of Solitude",
+      "authors": ["Gabriel García Márquez"],
+      "imageLinks": {
+        "thumbnail": "https://example.com/solitude.jpg"
+      },
+      "description": "A magical realist masterpiece.",
+      "publishedDate": "1967"
+    }
+  }
+]

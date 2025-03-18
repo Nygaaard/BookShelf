@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Book } from "../types/BookInterface";
+import BookCard from "../components/BookCard";
 
 const BooksPage = () => {
   const [searchParams] = useSearchParams();
@@ -33,23 +34,19 @@ const BooksPage = () => {
 
   return (
     <div>
-      <h2>Sökresultat för: "{searchTerm}"</h2>
+      <h2>
+        {searchTerm
+          ? `Sökresultat för: "${searchTerm}"`
+          : "Ange en sökning för att visa resultat"}
+      </h2>
 
       {error && <p style={{ color: "red" }}>{error}</p>}
 
-      <ul>
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
         {books.map((book) => (
-          <li key={book.id}>
-            <h3>{book.volumeInfo.title}</h3>
-            {book.volumeInfo.imageLinks?.thumbnail && (
-              <img
-                src={book.volumeInfo.imageLinks.thumbnail}
-                alt={book.volumeInfo.title}
-              />
-            )}
-          </li>
+          <BookCard key={book.id} book={book} />
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
