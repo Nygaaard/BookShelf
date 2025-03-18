@@ -6,6 +6,7 @@ interface BookCardProps {
 }
 
 const BookCard: React.FC<BookCardProps> = ({ book }) => {
+  console.log(book.id);
   return (
     <div className="book-card">
       {book.volumeInfo.imageLinks?.thumbnail && (

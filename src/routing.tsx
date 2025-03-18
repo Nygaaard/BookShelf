@@ -3,7 +3,7 @@ import HomePage from "./pages/HomePage";
 import ProfilePage from "./pages/ProfilePage";
 import LoginPage from "./pages/LoginPage";
 import BooksPage from "./pages/BooksPage";
-import BookPage from "./pages/DetailsPage";
+import DetailsPage from "./pages/DetailsPage";
 import RegisterPage from "./pages/RegisterPage";
 import Layout from "./components/Layout";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <BookPage />,
+        element: <DetailsPage />,
       },
     ],
   },
