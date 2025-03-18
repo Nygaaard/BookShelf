@@ -9,11 +9,12 @@ import {
 //Skapa context
 const AuthContext = createContext<AuthContextType | null>(null);
 
+//Interface för context
 interface AuthProviderProps {
   children: ReactNode;
 }
 
-export const AuthProvider: React.FC<AuthProviderProps> = (children) => {
+export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
 
   const login = async (credentials: LoginCredentials) => {
@@ -43,4 +44,20 @@ export const AuthProvider: React.FC<AuthProviderProps> = (children) => {
     localStorage.removeItem("token");
     setUser(null);
   };
+
+  return (
+    <AuthContext.Provider value={{ user, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export const useAuth = (): AuthContextType => {
+  const context = useContext(AuthContext);
+
+  if (!context) {
+    throw new Error("useAuth måste användas inom en AuthProvider");
+  }
+
+  return context;
 };
