@@ -53,6 +53,28 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setUser(null);
   };
 
+  const register = async (credentials: LoginCredentials) => {
+    try {
+      const response = await fetch("http://localhost:3001/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(credentials),
+      });
+
+      if (!response.ok) {
+        throw new Error("Registrering misslyckades...");
+      }
+
+      const data = await response.json();
+      localStorage.setItem("token", data.token);
+      setUser(data.user);
+    } catch {
+      throw new Error("Något gick fel...");
+    }
+  };
+
   //Validera token
   const checkToken = async () => {
     const token = localStorage.getItem("token");
@@ -85,7 +107,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, register }}>
       {children}
     </AuthContext.Provider>
   );

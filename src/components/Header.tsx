@@ -17,9 +17,14 @@ const Header = () => {
           </li>
           <li>
             {!user ? (
-              <NavLink to="/login">
-                <button className="login-btn">Logga in</button>
-              </NavLink>
+              <>
+                <NavLink to="/login">
+                  <button className="login-btn">Logga in</button>
+                </NavLink>
+                <NavLink to="/register">
+                  <button className="login-btn">Registrera dig</button>
+                </NavLink>
+              </>
             ) : (
               <button onClick={logout} className="login-btn">
                 Logga ut
