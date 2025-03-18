@@ -34,7 +34,7 @@ const LoginPage = () => {
       <div className="login-box">
         <h2>Logga in</h2>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="login-form">
           {error && <div className="error-message">{error}</div>}
 
           <div className="form-group">

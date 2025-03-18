@@ -1,0 +1,25 @@
+/* ALLMÄNT */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 1170px;
+    margin: 0 auto;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.1em;
+    line-height: 1.5em;
+    background-color: antiquewhite;
+    padding-bottom: 160px;
+}
+
+/*Error messages*/
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+}
