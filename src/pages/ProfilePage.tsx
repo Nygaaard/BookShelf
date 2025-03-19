@@ -5,19 +5,32 @@ const ProfilePage = () => {
   const { user } = useAuth();
 
   return (
-    <div>
+    <div className="my-page">
       <h2>Mina sidor</h2>
-      <p>Hej och välkommen {user?.firstname || "Användare"}</p>
+      <p className="welcome-text">
+        Hej och välkommen {user?.firstname || "Användare"}
+      </p>
 
-      <section>
-        <article>
-          <p>Förnamn: {user?.firstname}</p>
-          <p>Efternamn: {user?.lastname}</p>
-          <p>Email: {user?.email}</p>
-          <p>Användarnamn: {user?.username}</p>
-          <p>Konto skapat: {user?.created_at}</p>
+      <section className="user-info">
+        <article className="info-card">
+          <p>
+            <strong>Förnamn:</strong> {user?.firstname}
+          </p>
+          <p>
+            <strong>Efternamn:</strong> {user?.lastname}
+          </p>
+          <p>
+            <strong>Email:</strong> {user?.email}
+          </p>
+          <p>
+            <strong>Användarnamn:</strong> {user?.username}
+          </p>
+          <p>
+            <strong>Konto skapat:</strong> {user?.created_at}
+          </p>
         </article>
       </section>
+
       <MyReviews />
     </div>
   );
