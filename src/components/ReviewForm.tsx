@@ -45,7 +45,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ book_id, userReview }) => {
         throw new Error("Du måste vara inloggad för att lämna en recension.");
       }
 
-      const response = await fetch("http://localhost:3001/reviews", {
+      const response = await fetch("http://localhost:3002/reviews", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -65,7 +65,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ book_id, userReview }) => {
     } catch (err) {
       console.error(err);
       setReviewError(
-        "Det gick inte att skicka recensionen. Försök igen senare."
+        "Du måste vara inloggad för att kunna lämna en recension..."
       );
     }
   };

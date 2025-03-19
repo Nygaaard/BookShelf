@@ -19,7 +19,7 @@ const RegisterPage = () => {
     const userData = { firstname, lastname, email, username, password };
 
     try {
-      const response = await fetch("http://localhost:3001/register", {
+      const response = await fetch("http://localhost:3002/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

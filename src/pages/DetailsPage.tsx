@@ -4,22 +4,16 @@ import { useParams } from "react-router-dom";
 import { Book } from "../types/BookInterface"; // Importera Book-typen
 import BookDetails from "../components/BookDetails"; // Importera BookDetails-komponenten
 import ReviewForm from "../components/ReviewForm"; // Importera ReviewForm-komponenten
-
-interface Review {
-  id: number;
-  user_id: number;
-  review: string;
-  rating: number;
-  created_at: string;
-}
+import Review from "../components/Review";
+import { ReviewInterface } from "../types/ReviewInterface";
 
 const DetailsPage = () => {
   const params = useParams();
   const { id } = params;
 
   const [book, setBook] = useState<Book | null>(null);
-  const [reviews, setReviews] = useState<Review[]>([]);
-  const [userReview, setUserReview] = useState<Review | null>(null); // För användarens egen recension
+  const [reviews, setReviews] = useState<ReviewInterface[]>([]);
+  const [userReview, setUserReview] = useState<ReviewInterface | null>(null); // För användarens egen recension
   const [error, setError] = useState<string>("");
 
   // Hämta bokdetaljer och recensioner
@@ -47,7 +41,7 @@ const DetailsPage = () => {
 
     const fetchReviews = async () => {
       try {
-        const response = await fetch(`http://localhost:3001/reviews/${id}`);
+        const response = await fetch(`http://localhost:3002/reviews/${id}`);
 
         if (!response.ok) {
           throw new Error("Något gick fel vid hämtning av recensioner.");
@@ -58,7 +52,7 @@ const DetailsPage = () => {
 
         // Hitta och sätt användarens egen recension om den finns
         const userReview = data.find(
-          (review: Review) =>
+          (review: ReviewInterface) =>
             review.user_id === Number(localStorage.getItem("userId"))
         );
         setUserReview(userReview || null);
@@ -70,6 +64,8 @@ const DetailsPage = () => {
     fetchBookDetails();
     fetchReviews();
   }, [id]);
+
+  useEffect(() => {}, []);
 
   if (error) return <p style={{ color: "red" }}>{error}</p>;
 
@@ -89,19 +85,8 @@ const DetailsPage = () => {
 
       {reviews && reviews.length > 0 && (
         <ul>
-          {reviews.map((review) => (
-            <li key={review.id}>
-              <p>
-                <strong>Betyg:</strong> {review.rating}
-              </p>
-              <p>{review.review}</p>
-              <p>{review.user_id}</p>
-              <p>
-                <small>
-                  {new Date(review.created_at).toLocaleDateString()}
-                </small>
-              </p>
-            </li>
+          {reviews.map((review, i) => (
+            <Review review={review} key={i} />
           ))}
         </ul>
       )}

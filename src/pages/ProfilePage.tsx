@@ -1,3 +1,4 @@
+import MyReviews from "../components/MyReviews";
 import { useAuth } from "../context/AuthContext";
 
 const ProfilePage = () => {
@@ -17,6 +18,7 @@ const ProfilePage = () => {
           <p>Konto skapat: {user?.created_at}</p>
         </article>
       </section>
+      <MyReviews />
     </div>
   );
 };
