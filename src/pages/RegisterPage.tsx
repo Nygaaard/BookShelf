@@ -54,63 +54,62 @@ const RegisterPage = () => {
   };
 
   return (
-    <div>
-      <h1>Registrera dig</h1>
+    <div className="register-container">
+      <div className="register-box">
+        <h1>Registrera dig</h1>
 
-      {/* Visa framgångsmeddelande om registreringen lyckades */}
-      {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
+        {successMessage && <p className="success-message">{successMessage}</p>}
+        {error && <p className="error-message">{error}</p>}
 
-      {/* Visa felmeddelande om något gick fel */}
-      {error && <p style={{ color: "red" }}>{error}</p>}
-
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Förnamn</label>
-          <input
-            type="text"
-            value={firstname}
-            onChange={(e) => setFirstname(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Efternamn</label>
-          <input
-            type="text"
-            value={lastname}
-            onChange={(e) => setLastname(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>E-post</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Användarnamn</label>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Lösenord</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Registrera</button>
-      </form>
+        <form className="register-form" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label>Förnamn</label>
+            <input
+              type="text"
+              value={firstname}
+              onChange={(e) => setFirstname(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Efternamn</label>
+            <input
+              type="text"
+              value={lastname}
+              onChange={(e) => setLastname(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>E-post</label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Användarnamn</label>
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label>Lösenord</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit">Registrera</button>
+        </form>
+      </div>
     </div>
   );
 };

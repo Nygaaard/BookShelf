@@ -80,9 +80,11 @@ const DetailsPage = () => {
       <h1>Bokdetaljer</h1>
       <BookDetails book={book} />
 
-      <h2>Recensioner</h2>
+      <h2 className="text-align">Recensioner</h2>
       {reviews && reviews.length === 0 && (
-        <p>Det finns inga recensioner för den här boken än.</p>
+        <p className="text-align">
+          Det finns inga recensioner för den här boken än.
+        </p>
       )}
 
       {reviews && reviews.length > 0 && (
