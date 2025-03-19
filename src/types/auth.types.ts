@@ -4,7 +4,7 @@ export interface User {
     lastname: string,
     email: string,
     username: string,
-    createdAt: string
+    created_at: string
 }
 
 export interface LoginCredentials {

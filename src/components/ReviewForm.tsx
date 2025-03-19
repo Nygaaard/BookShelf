@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
 interface ReviewFormProps {
-  bookId: string;
+  book_id: string;
   userReview: { review: string; rating: number } | null; // För användarens redan lämnade recension
 }
 
-const ReviewForm: React.FC<ReviewFormProps> = ({ bookId, userReview }) => {
+const ReviewForm: React.FC<ReviewFormProps> = ({ book_id, userReview }) => {
   const [review, setReview] = useState<string>(
     userReview ? userReview.review : ""
   );
@@ -31,10 +31,12 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ bookId, userReview }) => {
     }
 
     const reviewData = {
-      book_id: bookId,
+      book_id: book_id,
       review: review,
       rating: rating,
     };
+
+    console.log("Data som skickas:", reviewData);
 
     try {
       const token = localStorage.getItem("token"); // Hämta token från localStorage
@@ -58,7 +60,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ bookId, userReview }) => {
 
       setReview(""); // Rensa recensionstexten
       setRating(1); // Rensa betyg
-      setReviewError(""); // Återställ eventuella fel
+      setReviewError("");
       alert("Recensionen skickades!");
     } catch (err) {
       console.error(err);

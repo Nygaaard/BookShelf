@@ -77,7 +77,7 @@ const DetailsPage = () => {
 
   return (
     <div>
-      <h1>Bokdetaljer</h1>
+      <h1 className="text-align">Bokdetaljer</h1>
       <BookDetails book={book} />
 
       <h2 className="text-align">Recensioner</h2>
@@ -95,6 +95,7 @@ const DetailsPage = () => {
                 <strong>Betyg:</strong> {review.rating}
               </p>
               <p>{review.review}</p>
+              <p>{review.user_id}</p>
               <p>
                 <small>
                   {new Date(review.created_at).toLocaleDateString()}
@@ -106,7 +107,7 @@ const DetailsPage = () => {
       )}
 
       {/* Använd ReviewForm-komponenten för att lämna recension */}
-      <ReviewForm bookId={id!} userReview={userReview} />
+      <ReviewForm book_id={id!} userReview={userReview} />
     </div>
   );
 };
