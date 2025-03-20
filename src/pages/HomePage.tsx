@@ -35,17 +35,20 @@ const HomePage = () => {
 
   return (
     <div>
-      <h1>Välkommen till Bokrecensioner!</h1>
+      <div className="home">
+        <h1>Välkommen till Bokhyllan!</h1>
 
-      <input
-        type="text"
-        placeholder="Sök efter en bok..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      <button onClick={handleSearch}>Sök</button>
+        <input
+          type="text"
+          placeholder="Sök efter en bok..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <button onClick={handleSearch}>Sök</button>
 
-      <h2>Populära böcker</h2>
+        <h2>Populära böcker</h2>
+      </div>
+
       <div style={{ display: "flex", flexWrap: "wrap" }}>
         {popularBooks.map((book) => (
           <BookCard key={book.id} book={book} />

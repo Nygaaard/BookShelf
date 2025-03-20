@@ -16,6 +16,6 @@ export interface BookVolumeInfo {
 }
 
 export interface Book {
-  id: string; // Bok-ID som vi får från API:et
-  volumeInfo: BookVolumeInfo; // All information om boken
+  id: string; 
+  volumeInfo: BookVolumeInfo;
 }

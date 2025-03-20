@@ -28,7 +28,6 @@ const RegisterPage = () => {
       });
 
       if (response.ok) {
-        // Visa framgångsmeddelande
         setSuccessMessage("Registreringen lyckades! Du kan nu logga in.");
         // Rensa alla input-fält
         setFirstname("");
@@ -36,9 +35,9 @@ const RegisterPage = () => {
         setEmail("");
         setUsername("");
         setPassword("");
-        setError(""); // Rensa eventuella tidigare felmeddelanden
+        setError("");
 
-        // Omdirigera användaren till login-sidan efter paus
+        // Omdirigera användaren till login-sidan
         setTimeout(() => {
           navigate("/login"); // Navigera till login-sidan
         }, 2000); // Vänta i 2 sekunder

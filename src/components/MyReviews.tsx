@@ -62,15 +62,22 @@ const MyReviews = () => {
   }, [deleteReview]);
 
   return (
-    <div>
-      {reviews.map((review) => (
-        <EditableReview
-          review={review}
-          key={review.id}
-          onDelete={deleteReview}
-          onEdit={editReview}
-        />
-      ))}
+    <div className="my-reviews">
+      <h3>Mina Recensioner</h3>
+      {reviews.length > 0 ? (
+        <ul className="reviews-list">
+          {reviews.map((review) => (
+            <EditableReview
+              review={review}
+              key={review.id}
+              onDelete={deleteReview}
+              onEdit={editReview}
+            />
+          ))}
+        </ul>
+      ) : (
+        <p className="no-reviews">Du har inga recensioner ännu.</p>
+      )}
     </div>
   );
 };

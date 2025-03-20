@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ReviewInterface } from "../types/ReviewInterface";
+import { CiStar } from "react-icons/ci";
 
 interface ReviewProps {
   review: ReviewInterface;
@@ -24,13 +25,13 @@ const Review = ({ review }: ReviewProps) => {
     getUsername(review.user_id);
   }, [review]);
   return (
-    <li key={review.id}>
-      <p>
-        <strong>Betyg:</strong> {review.rating}
+    <li className="review-card" key={review.id}>
+      <p className="rating">
+        <strong>Betyg:</strong> <CiStar className="star" /> {review.rating} / 5
       </p>
-      <p>{review.review}</p>
-      <p>{username}</p>
-      <p>
+      <p className="review-text">"{review.review}"</p>
+      <p className="review-author">– {username}</p>
+      <p className="review-date">
         <small>{new Date(review.created_at).toLocaleDateString()}</small>
       </p>
     </li>
