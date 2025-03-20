@@ -3,7 +3,7 @@ import { useAuth } from "../context/AuthContext";
 
 const ProfilePage = () => {
   const { user } = useAuth();
-
+  console.log(user?.username);
   return (
     <div className="my-page">
       <h2>Mina sidor</h2>

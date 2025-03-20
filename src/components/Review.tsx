@@ -8,7 +8,6 @@ interface ReviewProps {
 
 const Review = ({ review }: ReviewProps) => {
   const [username, setUsername] = useState<string>();
-  console.log("review: ", review);
 
   const getUsername = async (id: number) => {
     const response = await fetch(`http://localhost:3002/users/${id}`);

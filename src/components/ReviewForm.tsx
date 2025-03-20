@@ -13,10 +13,11 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ book_id, userReview }) => {
     userReview ? userReview.rating : 1
   );
   const [reviewError, setReviewError] = useState<string>("");
+  const [successMessage, setSuccessMessage] = useState<string>("");
 
   useEffect(() => {
     if (userReview) {
-      // Om användaren har en recension, sätt review och rating till deras befintliga värden
+      // Sätt befintliga värden för review och rating om de finns
       setReview(userReview.review);
       setRating(userReview.rating);
     }
@@ -35,8 +36,6 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ book_id, userReview }) => {
       review: review,
       rating: rating,
     };
-
-    console.log("Data som skickas:", reviewData);
 
     try {
       const token = localStorage.getItem("token"); // Hämta token från localStorage
@@ -58,14 +57,20 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ book_id, userReview }) => {
         throw new Error("Kunde inte skicka recensionen.");
       }
 
+      // Visa framgångsmeddelande och uppdatera sidan
+      setSuccessMessage("Recensionen skickades!");
       setReview(""); // Rensa recensionstexten
       setRating(1); // Rensa betyg
       setReviewError("");
-      alert("Recensionen skickades!");
+
+      // Uppdatera sidan efter en kort paus
+      setTimeout(() => {
+        window.location.reload();
+      }, 1500); // Uppdatera sidan efter 2 sekunder
     } catch (err) {
       console.error(err);
       setReviewError(
-        "Du måste vara inloggad för att kunna lämna en recension..."
+        "Kunde inte skicka recensionen. Kontrollera att du är inloggad."
       );
     }
   };
@@ -74,6 +79,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ book_id, userReview }) => {
     <div className="review-form-container">
       <h2>Lämna en recension</h2>
       {reviewError && <p className="error-message">{reviewError}</p>}
+      {successMessage && <p className="success-message">{successMessage}</p>}
 
       {userReview ? (
         <div>
