@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <footer>
-      <p>Sidfot</p>
+    <footer className="footer">
+      <p>© 2025 Andreas Nygråd. All rights reserved.</p>
     </footer>
   );
 };
