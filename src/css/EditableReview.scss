@@ -1,0 +1,77 @@
+/* Styles for the review component */
+.review-container {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.review-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.review-container li {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.review-container input[type="number"] {
+    width: 60px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.review-container input[type="textarea"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    min-height: 100px;
+    resize: vertical;
+}
+
+.review-container p {
+    font-size: 14px;
+    color: #333;
+}
+
+.review-container p small {
+    color: #777;
+}
+
+.review-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.review-actions svg {
+    cursor: pointer;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.review-actions svg:hover {
+    color: #007bff;
+}
+
+.review-username {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.review-date {
+    font-size: 12px;
+    color: #888;
+}

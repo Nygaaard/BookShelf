@@ -13,7 +13,6 @@ const EditableReview = ({ review, onDelete, onEdit }: ReviewProps) => {
   const [username, setUsername] = useState<string>();
   const [rating, setRating] = useState<number>(review.rating);
   const [editReview, setEditReview] = useState<string>(review.review);
-  console.log("review: ", review);
 
   const getUsername = async (id: number) => {
     const response = await fetch(`http://localhost:3002/users/${id}`);
@@ -30,27 +29,31 @@ const EditableReview = ({ review, onDelete, onEdit }: ReviewProps) => {
     getUsername(review.user_id);
   }, [review]);
   return (
-    <div>
+    <div className="review-container">
       <ul>
         <li key={review.id}>
           <input
             type="number"
             value={rating}
             onChange={(event) => setRating(+event.target.value)}
+            className="review-rating"
           />
           <input
             type="textarea"
             value={editReview}
             onChange={(event) => setEditReview(event.target.value)}
+            className="review-text"
           />
-          <p>{username}</p>
-          <p>
+          <p className="review-username">{username}</p>
+          <p className="review-date">
             <small>{new Date(review.created_at).toLocaleDateString()}</small>
           </p>
         </li>
       </ul>
-      <MdDelete onClick={() => onDelete(review.id)} />
-      <MdEdit onClick={() => onEdit(review.id, rating, editReview)} />
+      <div className="review-actions">
+        <MdDelete onClick={() => onDelete(review.id)} />
+        <MdEdit onClick={() => onEdit(review.id, rating, editReview)} />
+      </div>
     </div>
   );
 };
