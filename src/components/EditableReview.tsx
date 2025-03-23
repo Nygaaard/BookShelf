@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ReviewInterface } from "../types/ReviewInterface";
 import { MdDelete } from "react-icons/md";
-import { MdEdit } from "react-icons/md";
+import { FaCheck } from "react-icons/fa";
 
 interface ReviewProps {
   review: ReviewInterface;
@@ -52,7 +52,7 @@ const EditableReview = ({ review, onDelete, onEdit }: ReviewProps) => {
       </ul>
       <div className="review-actions">
         <MdDelete onClick={() => onDelete(review.id)} />
-        <MdEdit onClick={() => onEdit(review.id, rating, editReview)} />
+        <FaCheck onClick={() => onEdit(review.id, rating, editReview)} />
       </div>
     </div>
   );

@@ -32,9 +32,6 @@ const MyReviews = () => {
     if (!response.ok) {
       throw new Error("Kunde inte hämta recension");
     }
-
-    const data = await response.json();
-    console.log("data: ", data);
   };
   const editReview = async (id: number, rating: number, review: string) => {
     const response = await fetch(`http://localhost:3002/reviews/${id}`, {
@@ -53,8 +50,7 @@ const MyReviews = () => {
       throw new Error("Kunde inte ändra recension");
     }
 
-    const data = await response.json();
-    console.log("data", data);
+    alert("Recension uppdaterad!");
   };
 
   useEffect(() => {
