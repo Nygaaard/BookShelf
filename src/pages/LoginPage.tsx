@@ -21,6 +21,12 @@ const LoginPage = () => {
     e.preventDefault();
     setError("");
 
+    // Validering
+    if (!username.trim() || !password.trim()) {
+      setError("Både användarnamn och lösenord måste fyllas i.");
+      return;
+    }
+
     try {
       await login({ username, password });
       navigate("/profile");
@@ -42,7 +48,6 @@ const LoginPage = () => {
             <input
               type="text"
               id="username"
-              required
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
@@ -52,7 +57,6 @@ const LoginPage = () => {
             <input
               type="password"
               id="password"
-              required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />

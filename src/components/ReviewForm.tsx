@@ -111,7 +111,6 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ book_id, userReview }) => {
               id="review"
               value={review}
               onChange={(e) => setReview(e.target.value)}
-              required
             />
           </div>
           <button type="submit">Skicka recension</button>
